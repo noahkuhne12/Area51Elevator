@@ -14,5 +14,11 @@ namespace Area51Elevator
             MyFlor = myFlor;
             MyController = ctrl;
         }
+
+        public void Klik(Staff staff)
+        {
+            MyController.ForetagScanning(staff);
+
+        }
     }
 }

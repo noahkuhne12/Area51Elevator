@@ -8,10 +8,6 @@ namespace Area51Elevator
     {
         public List<Flor> flors;
 
-        public void GennemløbForStaff(Staff staff)
-        {
-
-        }
         public Controler(List<Flor> flors)
         {
             this.flors = flors;

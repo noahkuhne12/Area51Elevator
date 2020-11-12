@@ -14,10 +14,10 @@ namespace Area51Elevator
 
             flors = new List<Flor>()
             {
-                new Flor(0,ctrl),
-                new Flor(1,ctrl),
-                new Flor(2,ctrl),
-                new Flor(3,ctrl),
+                new Flor(1,ctlr),
+                new Flor(2,ctlr),
+                new Flor(3,ctlr),
+                new Flor(4,ctlr),
             };
 
             for (int i = 0; i < 1; i++)
@@ -26,7 +26,7 @@ namespace Area51Elevator
                     new Staff(flors[RND.Range(0, flors.Count)],
                     flors[RND.Range(0, flors.Count)],
                     RND.Range(0, flors.Count),
-                    ));
+                    RND.Range(0,100)));
             }
         }
 
@@ -40,7 +40,11 @@ namespace Area51Elevator
         {
             //p.panel.SendrequestToController();
             Program p = new Program();
-            p.GennemLøb(p.Staffs[0]);
+            for (int i = 0; i < p.Staffs.Count; i++)
+            {
+                p.GennemLøb(p.Staffs[i]);
+            }
+            
 
 
 

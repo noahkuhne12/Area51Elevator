@@ -24,6 +24,7 @@ namespace Area51Elevator
 
         public void ForetagScanning(Staff staff)
         {
+            Console.WriteLine("Scanning ind Progres");
             if (staff.MyFlor.MyScanner.Scan(staff))
             {
 

@@ -11,6 +11,11 @@ namespace Area51Elevator
         public int Clearance;
         public int SpawnTime;
 
+        public Staff()
+        {
+
+        }
+
         public Staff(Flor myFlor, Flor targetFlor, int clearance, int spawnTime)
         {
             MyFlor = myFlor;

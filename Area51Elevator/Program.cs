@@ -8,10 +8,11 @@ namespace Area51Elevator
         List<Flor> flors;
         List<Staff> Staffs = new List<Staff>();
         Controler ctlr = new Controler();
+        
 
         public Program()
         {
-
+            // Createing floors
             flors = new List<Flor>()
             {
                 new Flor(1,ctlr),
@@ -20,13 +21,20 @@ namespace Area51Elevator
                 new Flor(4,ctlr),
             };
 
-            for (int i = 0; i < 1; i++)
+
+            // creating Staff
+            int numberOfStaff;
+
+            Console.WriteLine("How many pepel in do you ned in staff");
+            numberOfStaff = Convert.ToInt32(Console.ReadLine());
+
+            for (int i = 0; i < numberOfStaff; i++)
             {
                 Staffs.Add(
                     new Staff(flors[RND.Range(0, flors.Count)],
                     flors[RND.Range(0, flors.Count)],
                     RND.Range(0, flors.Count),
-                    RND.Range(0,100)));
+                    RND.Range(0,50)));
             }
         }
 
@@ -38,16 +46,25 @@ namespace Area51Elevator
 
         static void Main(string[] args)
         {
+            
             //p.panel.SendrequestToController();
             Program p = new Program();
-            for (int i = 0; i < p.Staffs.Count; i++)
+
+            int timer = 0;
+
+            while (timer != 50)
             {
-                p.GennemLøb(p.Staffs[i]);
+                for (int i = 0; i < p.Staffs.Count; i++)
+                {
+                    if (p.Staffs[i].SpawnTime == timer)
+                    {
+                        p.GennemLøb(p.Staffs[i]);
+                    }
+                }
+                Console.WriteLine(timer);
+                ITakeTime.TakeTime();
+                timer++;
             }
-            
-
-
-
         }
     }
 }

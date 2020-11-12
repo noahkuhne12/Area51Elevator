@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Area51Elevator
 {
-    class Turret
+    class Turret : ITakeTime
     {
         public Flor MyFlor;
 
@@ -20,8 +20,9 @@ namespace Area51Elevator
 
         public string Kill(Staff staff)
         {
+            ITakeTime.TakeTime();
             staff.Dead = true;
-            return "He dead";
+            return "dead boy or gril";
         }
     }
 }
